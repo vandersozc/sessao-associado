@@ -11,8 +11,4 @@ gradle build jacocoTestReport
 reports/jacoco/test/html/index.html
 
 ## SonarCloud Metrics
-./gradlew sonarqube \
-  -Dsonar.projectKey=sessao-associado \
-  -Dsonar.organization=vandersozc-github \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=43943874b1f042489b850331363553f0607c40eb
+./gradlew sonarqube -Dsonar.projectKey=sessao-associado -Dsonar.organization=vandersozc-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=43943874b1f042489b850331363553f0607c40eb

@@ -7,23 +7,10 @@ import br.com.vcampanholi.impl.service.PautaService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Component
 @AllArgsConstructor
 public class PautaFacade {
     private PautaService pautaService;
-
-    public List<PautaResponse> get() {
-        return pautaService.get().stream()
-                .map(pauta -> PautaResponse.builder()
-                        .pautaId(pauta.getPautaId())
-                        .dataCadastro(pauta.getDataCadastro())
-                        .assunto(pauta.getAssunto())
-                        .build()
-                ).collect(Collectors.toList());
-    }
 
     public PautaResponse criarPauta(PautaRequest pautaRequest) {
         return PautaMapper.mapToResponse(pautaService.criarPauta(pautaRequest));

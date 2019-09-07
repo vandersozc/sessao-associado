@@ -37,7 +37,7 @@ public class ControllerAdviceConfiguration {
     @ExceptionHandler(GenericException.class)
     public ResponseEntity<ErrorInfo> genericException(GenericException error, HttpServletRequest httpServletRequest) {
         log.error("ControllerAdviceConfiguration.genericException={}", error);
-        error.setErrorInfo(ErrorInfo.builder()
+        var errorInfo = ErrorInfo.builder()
                 .errors(List.of(ErrorDetail.builder()
                         .message(error.getMessage())
                         .type(error.getStatus().name())
@@ -45,8 +45,8 @@ public class ControllerAdviceConfiguration {
                 )
                 .language(DEFAULT_LANGUAGE_TAG)
                 .namespace(httpServletRequest.getServletPath())
-                .build());
-        return ResponseEntity.status(error.getStatus()).body(error.getErrorInfo());
+                .build();
+        return ResponseEntity.status(error.getStatus()).body(errorInfo);
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)

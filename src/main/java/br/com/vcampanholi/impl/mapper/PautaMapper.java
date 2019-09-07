@@ -2,7 +2,6 @@ package br.com.vcampanholi.impl.mapper;
 
 import br.com.vcampanholi.api.v1.pauta.model.request.PautaRequest;
 import br.com.vcampanholi.api.v1.pauta.model.response.PautaResponse;
-import br.com.vcampanholi.impl.model.PautaModel;
 import br.com.vcampanholi.impl.repository.entity.PautaEntity;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -17,14 +16,6 @@ public class PautaMapper {
                 .pautaId(pautaModel.getPautaId())
                 .assunto(pautaModel.getAssunto())
                 .dataCadastro(pautaModel.getDataCadastro())
-                .build();
-    }
-
-    public static PautaEntity mapToUpdate(Long pautaId, PautaRequest pautaRequest) {
-        if (ObjectUtils.isEmpty(pautaRequest)) return null;
-        return PautaEntity.builder()
-                .pautaId(pautaId)
-                .assunto(pautaRequest.getAssunto())
                 .build();
     }
 

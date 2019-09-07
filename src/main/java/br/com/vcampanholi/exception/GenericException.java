@@ -1,6 +1,5 @@
 package br.com.vcampanholi.exception;
 
-import br.com.vcampanholi.exception.handler.response.ErrorInfo;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.http.HttpStatus;
@@ -9,9 +8,8 @@ import org.springframework.http.HttpStatus;
 @EqualsAndHashCode(callSuper = false)
 public class GenericException extends RuntimeException {
 
-    private ErrorInfo errorInfo;
-    private String message;
-    private HttpStatus status;
+    private final String message;
+    private final HttpStatus status;
 
     public GenericException(String message, HttpStatus status) {
         this.message = message;

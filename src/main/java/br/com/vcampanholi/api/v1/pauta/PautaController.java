@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequestMapping("sessao-associado/v1/pauta")
@@ -18,12 +17,6 @@ import java.util.List;
 public class PautaController {
 
     private PautaFacade pautaFacade;
-
-    //TODO Remover metodo
-    @GetMapping
-    public List<PautaResponse> get() {
-        return pautaFacade.get();
-    }
 
     @PostMapping
     @ApiOperation(value = "Cria uma nova pauta.", response = PautaResponse.class)
