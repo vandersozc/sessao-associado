@@ -1,4 +1,4 @@
-package br.com.vcampanholi.impl.repository.entity;
+package br.com.vcampanholi.domain.pauta.repository.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

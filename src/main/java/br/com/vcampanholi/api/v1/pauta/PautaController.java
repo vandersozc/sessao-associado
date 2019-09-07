@@ -19,7 +19,7 @@ public class PautaController {
     private PautaFacade pautaFacade;
 
     @PostMapping
-    @ApiOperation(value = "Cria uma nova pauta.", response = PautaResponse.class)
+    @ApiOperation(value = "Criar uma nova pauta.", response = PautaResponse.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = PautaResponse.class),
     })
@@ -38,5 +38,4 @@ public class PautaController {
                                      @PathVariable("pauta_id") Long pautaId) {
         return pautaFacade.buscarPauta(pautaId);
     }
-
 }

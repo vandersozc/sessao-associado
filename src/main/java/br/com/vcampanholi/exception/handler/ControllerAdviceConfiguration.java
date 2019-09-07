@@ -5,7 +5,6 @@ import br.com.vcampanholi.exception.constants.CommonErrorsEnum;
 import br.com.vcampanholi.exception.handler.response.ErrorDetail;
 import br.com.vcampanholi.exception.handler.response.ErrorInfo;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +28,6 @@ import java.util.stream.Collectors;
 @Slf4j
 @Configuration
 @RestControllerAdvice
-@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
 public class ControllerAdviceConfiguration {
 
     private static final String DEFAULT_LANGUAGE_TAG = "pt-BR";
@@ -65,7 +63,6 @@ public class ControllerAdviceConfiguration {
                 )
                 .build();
     }
-
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     @ResponseBody

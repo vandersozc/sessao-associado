@@ -1,0 +1,1 @@
+package br.com.vcampanholi.api.v1.stubs;import br.com.vcampanholi.api.v1.pauta.model.request.PautaRequest;public class PautaRequestStub {    public static PautaRequest pautaRequest() {        return PautaRequest.builder()                .assunto("Estratégia dos associados.")                .build();    }}

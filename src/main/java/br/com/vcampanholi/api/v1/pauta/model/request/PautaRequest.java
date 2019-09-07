@@ -15,6 +15,6 @@ import javax.validation.constraints.NotNull;
 public class PautaRequest {
 
     @NotNull(message = "O assunto da pauta deve ser informado.")
-    @ApiModelProperty(value = "Assunto da pauta.", example = "Divisão de dividendos entre os sócios", required = true)
+    @ApiModelProperty(value = "Assunto da pauta.", example = "Estratégia dos associados", required = true)
     private String assunto;
 }
