@@ -1,7 +1,7 @@
 package br.com.vcampanholi.exception.handler;
 
 import br.com.vcampanholi.exception.GenericException;
-import br.com.vcampanholi.exception.constants.CommonErrorsEnum;
+import br.com.vcampanholi.exception.constants.ErrorsEnum;
 import br.com.vcampanholi.exception.handler.response.ErrorDetail;
 import br.com.vcampanholi.exception.handler.response.ErrorInfo;
 import lombok.extern.slf4j.Slf4j;
@@ -57,7 +57,7 @@ public class ControllerAdviceConfiguration {
                 .namespace(httpServletRequest.getServletPath())
                 .language(DEFAULT_LANGUAGE_TAG)
                 .errors(List.of(ErrorDetail.builder()
-                        .type(CommonErrorsEnum.HTTP_MESSAGE_NOT_READABLE.name())
+                        .type(ErrorsEnum.HTTP_MESSAGE_NOT_READABLE.name())
                         .message("O corpo da requisição não pôde ser lido")
                         .build())
                 )
@@ -93,7 +93,7 @@ public class ControllerAdviceConfiguration {
         var errors = error.getConstraintViolations().stream()
                 .map(violation -> ErrorDetail.builder()
                         .message(violation.getMessage())
-                        .type(CommonErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
+                        .type(ErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
                         .build()).collect(Collectors.toList());
         return ErrorInfo.builder()
                 .namespace(httpServletRequest.getServletPath())
@@ -110,7 +110,7 @@ public class ControllerAdviceConfiguration {
         var errors = error.getAllErrors().stream()
                 .map(violation -> ErrorDetail.builder()
                         .message(violation.getDefaultMessage())
-                        .type(CommonErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
+                        .type(ErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
                         .build())
                 .collect(Collectors.toList());
         return ErrorInfo.builder()
@@ -130,7 +130,7 @@ public class ControllerAdviceConfiguration {
                 .namespace(httpServletRequest.getServletPath())
                 .language(DEFAULT_LANGUAGE_TAG)
                 .errors(List.of(ErrorDetail.builder()
-                        .type(CommonErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
+                        .type(ErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
                         .message("Método http não é suportado para a requisição")
                         .build())
                 )
@@ -146,7 +146,7 @@ public class ControllerAdviceConfiguration {
                 .namespace(httpServletRequest.getServletPath())
                 .language(DEFAULT_LANGUAGE_TAG)
                 .errors(List.of(ErrorDetail.builder()
-                        .type(CommonErrorsEnum.INTERNAL_SERVER_ERROR.name())
+                        .type(ErrorsEnum.INTERNAL_SERVER_ERROR.name())
                         .message("Ocorreu um erro inesperado na aplicação")
                         .build())
                 )
@@ -155,7 +155,7 @@ public class ControllerAdviceConfiguration {
 
     private ErrorDetail buildFieldErrorInfo(FieldError error) {
         return ErrorDetail.builder()
-                .type(CommonErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
+                .type(ErrorsEnum.METHOD_ARGUMENT_NOT_VALID.name())
                 .message(error.getDefaultMessage())
                 .build();
     }

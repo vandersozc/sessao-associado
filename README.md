@@ -2,11 +2,11 @@
 http://localhost:9001/swagger-ui.html#/
 
 ## Mutation Test
-gradle pitest
+./gradlew pitest
 reports/jacoco/test/html/index.html
 
 ## Jacoco Coverage Test
-gradle build jacocoTestReport
+./gradlew build jacocoTestReport
 
 reports/jacoco/test/html/index.html
 

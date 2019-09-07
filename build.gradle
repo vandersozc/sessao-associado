@@ -34,8 +34,6 @@ pitest {
     threads = 8
     testPlugin = "junit5"
     outputFormats = ["HTML"]
-    targetClasses = ['br.com.vcampanholi.*']
-    excludedClasses = ['br.com.vcampanholi.api.config.*']
 }
 
 repositories {
