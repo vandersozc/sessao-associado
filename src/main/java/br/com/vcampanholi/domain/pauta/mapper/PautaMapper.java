@@ -3,13 +3,9 @@ package br.com.vcampanholi.domain.pauta.mapper;
 import br.com.vcampanholi.api.v1.pauta.model.request.PautaRequest;
 import br.com.vcampanholi.api.v1.pauta.model.response.PautaResponse;
 import br.com.vcampanholi.domain.pauta.repository.entity.PautaEntity;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.springframework.util.ObjectUtils;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PautaMapper {
-
     public static PautaResponse mapToResponse(PautaEntity pautaEntity) {
         if (ObjectUtils.isEmpty(pautaEntity)) return null;
         return PautaResponse.builder()
