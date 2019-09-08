@@ -25,7 +25,7 @@ public class PautaService {
 
     public PautaEntity buscarPauta(Long pautaId) {
         return pautaRepository.findById(pautaId)
-                .orElseThrow(() -> new GenericException("Nenhuma pauta encontrada para a consulta.",
-                        HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> new GenericException(
+                        "Nenhuma pauta encontrada com id: ".concat(pautaId.toString()), HttpStatus.NOT_FOUND));
     }
 }

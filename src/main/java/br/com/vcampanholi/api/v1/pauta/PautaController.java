@@ -1,8 +1,8 @@
 package br.com.vcampanholi.api.v1.pauta;
 
 import br.com.vcampanholi.api.v1.pauta.facade.PautaFacade;
-import br.com.vcampanholi.api.v1.pauta.model.request.PautaRequest;
 import br.com.vcampanholi.api.v1.pauta.model.response.PautaResponse;
+import br.com.vcampanholi.api.v1.pauta.model.request.PautaRequest;
 import br.com.vcampanholi.exception.GenericException;
 import io.swagger.annotations.*;
 import lombok.AllArgsConstructor;

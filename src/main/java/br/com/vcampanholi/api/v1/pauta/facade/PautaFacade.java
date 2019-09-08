@@ -16,7 +16,8 @@ public class PautaFacade {
     private PautaService pautaService;
 
     public PautaResponse criarPauta(PautaRequest pautaRequest) {
-        var response = PautaMapper.mapToResponse(pautaService.criarPauta(pautaRequest));
+        var pauta = pautaService.criarPauta(pautaRequest);
+        var response = PautaMapper.mapToResponse(pauta);
         return linkResponse(response);
     }
 

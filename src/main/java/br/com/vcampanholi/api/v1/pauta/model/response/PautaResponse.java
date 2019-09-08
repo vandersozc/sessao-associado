@@ -14,8 +14,8 @@ import java.time.LocalDate;
 @Data
 @Builder
 @AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 @JsonPropertyOrder("id")
+@EqualsAndHashCode(callSuper = false)
 public class PautaResponse extends ResourceSupport {
 
     @JsonProperty("id")
