@@ -1,0 +1,1 @@
+package br.com.vcampanholi.stubs.entity;import br.com.vcampanholi.domain.sessaovoto.repository.entity.SessaoVotoEntity;public class SessaoVotoEntityStub {    public static SessaoVotoEntity sessaoVotoEntity() {        return SessaoVotoEntity.builder()                .voto(Boolean.TRUE)                .cpfAssociado("18979793049")                .build();    }}

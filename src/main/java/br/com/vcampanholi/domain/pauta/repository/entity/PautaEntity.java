@@ -17,7 +17,7 @@ public class PautaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long pautaId;
+    private Long id;
 
     @Column(name = "ASSUNTO")
     private String assunto;

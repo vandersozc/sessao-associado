@@ -18,7 +18,7 @@ public class SessaoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long sessaoId;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "ID_PAUTA")

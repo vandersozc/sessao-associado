@@ -1,11 +1,12 @@
 package br.com.vcampanholi.api.v1.sessao.model.response;
 
 import br.com.vcampanholi.api.v1.pauta.model.response.PautaResponse;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.*;
-import org.springframework.hateoas.ResourceSupport;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -14,12 +15,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonPropertyOrder("id")
-@EqualsAndHashCode(callSuper = false)
-public class SessaoResponse extends ResourceSupport {
+public class SessaoResponse {
 
-    @JsonProperty("id")
     @ApiModelProperty(value = "Identificador da sessão", example = "2")
-    private Long sessaoId;
+    private Long id;
 
     @ApiModelProperty(value = "Data/hora de abertura da sessão", example = "2019-09-07T15:34:00.341Z")
     private LocalDateTime dataHoraAbertura;

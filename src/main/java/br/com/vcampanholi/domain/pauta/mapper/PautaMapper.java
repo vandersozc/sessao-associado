@@ -12,7 +12,7 @@ public class PautaMapper {
     public static PautaResponse mapToResponse(PautaEntity pautaEntity) {
         if (ObjectUtils.isEmpty(pautaEntity)) return null;
         return PautaResponse.builder()
-                .pautaId(pautaEntity.getPautaId())
+                .id(pautaEntity.getId())
                 .assunto(pautaEntity.getAssunto())
                 .dataCadastro(pautaEntity.getDataCadastro())
                 .build();

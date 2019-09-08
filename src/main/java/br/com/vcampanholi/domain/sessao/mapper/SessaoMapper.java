@@ -13,7 +13,7 @@ public class SessaoMapper {
     public static SessaoResponse mapToResponse(SessaoEntity sessaoEntity) {
         if (ObjectUtils.isEmpty(sessaoEntity)) return null;
         return SessaoResponse.builder()
-                .sessaoId(sessaoEntity.getSessaoId())
+                .id(sessaoEntity.getId())
                 .dataHoraAbertura(sessaoEntity.getDataHoraAbertura())
                 .dataHoraEncerramento(sessaoEntity.getDataHoraEncerramento())
                 .pauta(PautaMapper.mapToResponse(sessaoEntity.getPauta()))
