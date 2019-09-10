@@ -29,7 +29,7 @@ public class PautaController {
     }
 
     @GetMapping("/{pauta_id}")
-    @ApiOperation(value = "Buscar uma pauta pelo identificador.")
+    @ApiOperation(value = "Buscar uma pauta pelo identificador com votos computados.")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = PautaResponse.class),
             @ApiResponse(code = 404, message = "Pauta não encontrada.", response = GenericException.class)

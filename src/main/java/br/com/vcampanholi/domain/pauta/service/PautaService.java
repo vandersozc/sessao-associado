@@ -47,7 +47,7 @@ public class PautaService {
                         "Nenhuma pauta encontrada com id: ".concat(pautaId.toString()), HttpStatus.NOT_FOUND));
     }
 
-    public List<Long> buscarIdPautas() {
-        return pautaRepository.findAllId();
+    public List<PautaEntity> buscarPautas() {
+        return pautaRepository.findAll();
     }
 }

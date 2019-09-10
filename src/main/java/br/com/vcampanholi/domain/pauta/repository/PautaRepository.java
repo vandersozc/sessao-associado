@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface PautaRepository extends CrudRepository<PautaEntity, Long> {
 
-    List<Long> findAllId();
+    List<PautaEntity> findAll();
 
 }
