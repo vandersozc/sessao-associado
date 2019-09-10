@@ -12,7 +12,7 @@
 
 ## Estrutura do projeto
 O projeto está dividido por feature de negócio e possui a seguite estrutura:
-- **api:** Camada responsável pelo contrato da API, expôem os endpoints para a camada REST (Objetos de request e response, controllers e arquivos de configuração). Possui versionaento através de packages do tipo 'V1', 'V2', V3 caso o contrato venha a mudar é possível versionar a api.
+- **api:** Camada responsável pelo contrato da API, expôem os endpoints para a camada REST (Objetos de request e response, controllers e arquivos de configuração). Possui versionamento através de packages do tipo 'V1', 'V2', V3 caso o contrato venha a mudar é possível versionar a api.
 - **exception:** Camada responsável por capturar as exceções da api, e retornar os erros de forma amigável ao usuário. Possui uma classe genérica que é chamada para tratar a exceções de negócio e ExceptionHandlers que capturam outros tipos de exceção e tratam as memas
 - **domain:** Camada responsável por conter as regras de neçócio da api, classes de persistência dos dados, classes para mapeamento de objetos.
 - **integration:** Camada responsável por conter classes que acessam e se integram com serviços externos.
