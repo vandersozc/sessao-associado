@@ -6,6 +6,8 @@ import br.com.vcampanholi.domain.pauta.service.PautaService;
 import br.com.vcampanholi.exception.GenericException;
 import io.swagger.annotations.*;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -23,9 +25,11 @@ public class PautaController {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK", response = PautaResponse.class),
     })
-    public PautaResponse criarPauta(@ApiParam(value = "Informações da pauta.", required = true)
-                                    @Valid @RequestBody PautaRequest pautaRequest) {
-        return pautaService.criarPauta(pautaRequest);
+    public ResponseEntity<PautaResponse> criarPauta(@ApiParam(value = "Informações da pauta.", required = true)
+                                                    @Valid @RequestBody PautaRequest pautaRequest) {
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(pautaService.criarPauta(pautaRequest));
     }
 
     @GetMapping("/{pauta_id}")
@@ -34,8 +38,8 @@ public class PautaController {
             @ApiResponse(code = 200, message = "OK", response = PautaResponse.class),
             @ApiResponse(code = 404, message = "Pauta não encontrada.", response = GenericException.class)
     })
-    public PautaResponse buscarPautaComputada(@ApiParam(value = "pauta_id.", required = true)
-                                              @PathVariable("pauta_id") Long pautaId) {
-        return pautaService.buscarPautaComputada(pautaId);
+    public ResponseEntity<PautaResponse> buscarPautaComputada(@ApiParam(value = "pauta_id.", required = true)
+                                                              @PathVariable("pauta_id") Long pautaId) {
+        return ResponseEntity.ok(pautaService.buscarPautaComputada(pautaId));
     }
 }

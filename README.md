@@ -11,7 +11,7 @@
 - Foram utilizadas classes como Service e Repository para facilitar o desenvolvimento e centralizar as regras.
 
 ## Estrutura do projeto
-O projeto possui esta dividido por cada feature de negócio e possui a seguite estrutura:
+O projeto está dividido por feature de negócio e possui a seguite estrutura:
 - **api:** Camada responsável pelo contrato da API, expôem os endpoints para a camada REST (Objetos de request e response, controllers e arquivos de configuração). Possui versionaento através de packages do tipo 'V1', 'V2', V3 caso o contrato venha a mudar é possível versionar a api.
 - **exception:** Camada responsável por capturar as exceções da api, e retornar os erros de forma amigável ao usuário. Possui uma classe genérica que é chamada para tratar a exceções de negócio e ExceptionHandlers que capturam outros tipos de exceção e tratam as memas
 - **domain:** Camada responsável por conter as regras de neçócio da api, classes de persistência dos dados, classes para mapeamento de objetos.
@@ -24,7 +24,8 @@ A ferramenta utilizada para a documentação da Api foi o [Swagger](https://swag
 http://localhost:9001/swagger-ui.html#/
 
 ## Execução do Projeto
-O projeto utiliza Java 11 com Gradle para build e gerenciamento das dependências.
+- O projeto utiliza Java 11 com Gradle para build e gerenciamento das dependências.
+- Foi utilizada a biblioteca do [Lombok](https://projectlombok.org/), dependedo da IDE a ser utilizada sera necessário plugin para visualização dos métodos getter, setter, equals, builder; 
 Execute o comando abaixo na pasta raiz do projeto para fazer download das dependências e gerar os artefatos necessários:
 O serviço será executado na porta 9001.
 ```
@@ -50,7 +51,7 @@ Foi incluído também testes de mutação de código para verificar se realmente
 Para análise de código estático e relatório de cobertura de testes foi utilizado o [SonarCloud](https://sonarcloud.io) e pode ser visualizada em: [sessao-associado](https://sonarcloud.io/dashboard?id=sessao-associado).
 
 ## Mensageria com RabbitMQ
-Foi utilizado o [RabbitMQ](https://www.rabbitmq.com/) para geração da fila de mensageria, foi escolhido devido a fácil configurção e uso com [Docker](https://www.docker.com/) e por que também cumpre muito bem o papel de message broker.
+Foi utilizado o [RabbitMQ](https://www.rabbitmq.com/) para geração da fila de mensageria, foi escolhido devido a fácil configuração e uso com [Docker](https://www.docker.com/) e por que também cumpre muito bem o papel de message broker.
 
 Para executar o RabbitMQ é necessário já ter configurado na máquina ou utilizar com Docker, no projeto há um arquivo de configuração para subir o container Docker (docker-compose.yml).
 
