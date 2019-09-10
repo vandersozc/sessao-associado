@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -44,5 +45,9 @@ public class PautaService {
         return pautaRepository.findById(pautaId)
                 .orElseThrow(() -> new GenericException(
                         "Nenhuma pauta encontrada com id: ".concat(pautaId.toString()), HttpStatus.NOT_FOUND));
+    }
+
+    public List<Long> buscarIdPautas() {
+        return pautaRepository.findAllId();
     }
 }

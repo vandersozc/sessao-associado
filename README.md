@@ -16,3 +16,16 @@ https://sonarcloud.io/dashboard?id=sessao-associado
 
 ## Travis CI
 https://travis-ci.com/vandersozc/sessao-associado
+
+## RabbitMQ
+Download Imagem docker: 
+https://hub.docker.com/_/rabbitmq
+ou 
+docker pull rabbitmq
+
+Criar container com RabbitMq: sudo docker-compose up
+Remover Container: sudo docker-compose rm
+
+Interface Rabbitmq Management: 
+http://localhost:15672/#/queues
+Queue: PautaQueue

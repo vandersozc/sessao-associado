@@ -1,6 +1,7 @@
 package br.com.vcampanholi.domain.sessao.repository.entity;
 
 import br.com.vcampanholi.domain.pauta.repository.entity.PautaEntity;
+import br.com.vcampanholi.domain.sessao.enumerations.SituacaoEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,4 +30,8 @@ public class SessaoEntity {
 
     @Column(name = "DATA_HORA_ENCERRAMENTO")
     private LocalDateTime dataHoraEncerramento;
+
+    @Column(name = "SITUACAO")
+    @Enumerated(EnumType.ORDINAL)
+    private SituacaoEnum situacao;
 }
