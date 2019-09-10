@@ -52,7 +52,7 @@ Para análise de código estático e relatório de cobertura de testes foi utili
 ## Mensageria com RabbitMQ
 Foi utilizado o [RabbitMQ](https://www.rabbitmq.com/) para geração da fila de mensageria, foi escolhido devido a fácil configurção e uso com [Docker](https://www.docker.com/) e por que também cumpre muito bem o papel de message broker.
 
-Para executar o RabbitMQ é necessário já ter configurado na máquina ou utilizar com Docker, no projeto há um arquivo de configuração para subir o contâiner Docker.
+Para executar o RabbitMQ é necessário já ter configurado na máquina ou utilizar com Docker, no projeto há um arquivo de configuração para subir o container Docker (docker-compose.yml).
 
 Imgem Docker: 
 https://hub.docker.com/_/rabbitmq ou  docker pull rabbitmq
@@ -65,7 +65,7 @@ Remover Container:
 ```
 sudo docker-compose rm
 ```
-Interface Rabbitmq Management para visualização da fila: 
+### Interface Rabbitmq Management para visualização da fila: 
 
 http://localhost:15672/#/queues
 
