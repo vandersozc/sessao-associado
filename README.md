@@ -70,7 +70,10 @@ sudo docker-compose rm
 
 http://localhost:15672/#/queues
 
-Fila Configurada: 
+username: guest
+
+password: guest
+
 Queue: PautaQueue
 
 ## Serviços
