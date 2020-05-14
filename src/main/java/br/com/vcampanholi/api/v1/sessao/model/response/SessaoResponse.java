@@ -1,20 +1,10 @@
 package br.com.vcampanholi.api.v1.sessao.model.response;
 
 import br.com.vcampanholi.api.v1.pauta.model.response.PautaResponse;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@JsonPropertyOrder("id")
 public class SessaoResponse {
 
     @ApiModelProperty(value = "Identificador da sessão", example = "2")
@@ -28,4 +18,36 @@ public class SessaoResponse {
 
     @ApiModelProperty(value = "Dados da pauta")
     private PautaResponse pauta;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getDataHoraAbertura() {
+        return dataHoraAbertura;
+    }
+
+    public void setDataHoraAbertura(LocalDateTime dataHoraAbertura) {
+        this.dataHoraAbertura = dataHoraAbertura;
+    }
+
+    public LocalDateTime getDataHoraEncerramento() {
+        return dataHoraEncerramento;
+    }
+
+    public void setDataHoraEncerramento(LocalDateTime dataHoraEncerramento) {
+        this.dataHoraEncerramento = dataHoraEncerramento;
+    }
+
+    public PautaResponse getPauta() {
+        return pauta;
+    }
+
+    public void setPauta(PautaResponse pauta) {
+        this.pauta = pauta;
+    }
 }

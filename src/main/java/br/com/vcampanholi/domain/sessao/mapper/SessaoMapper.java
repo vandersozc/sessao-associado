@@ -4,28 +4,27 @@ import br.com.vcampanholi.api.v1.sessao.model.request.SessaoRequest;
 import br.com.vcampanholi.api.v1.sessao.model.response.SessaoResponse;
 import br.com.vcampanholi.domain.pauta.mapper.PautaMapper;
 import br.com.vcampanholi.domain.sessao.repository.entity.SessaoEntity;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.springframework.util.ObjectUtils;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SessaoMapper {
     public static SessaoResponse mapToResponse(SessaoEntity sessaoEntity) {
         if (ObjectUtils.isEmpty(sessaoEntity)) return null;
-        return SessaoResponse.builder()
-                .id(sessaoEntity.getId())
-                .dataHoraAbertura(sessaoEntity.getDataHoraAbertura())
-                .dataHoraEncerramento(sessaoEntity.getDataHoraEncerramento())
-                .pauta(PautaMapper.mapToResponse(sessaoEntity.getPauta()))
-                .build();
+
+        SessaoResponse sessaoResponse = new SessaoResponse();
+        sessaoResponse.setId(sessaoEntity.getId());
+        sessaoResponse.setDataHoraAbertura(sessaoEntity.getDataHoraAbertura());
+        sessaoResponse.setDataHoraEncerramento(sessaoEntity.getDataHoraEncerramento());
+        sessaoResponse.setPauta(PautaMapper.mapToResponse(sessaoEntity.getPauta()));
+        return sessaoResponse;
     }
 
     public static SessaoEntity mapToEntity(SessaoRequest sessaoRequest) {
         if (ObjectUtils.isEmpty(sessaoRequest)) return null;
-        return SessaoEntity.builder()
-                .dataHoraAbertura(sessaoRequest.getDataHoraAbertura())
-                .dataHoraEncerramento(sessaoRequest.getDataHoraAbertura()
-                        .plusMinutes(sessaoRequest.getDuracao()))
-                .build();
+
+        SessaoEntity sessaoEntity = new SessaoEntity();
+        sessaoEntity.setDataHoraAbertura(sessaoRequest.getDataHoraAbertura());
+        sessaoEntity.setDataHoraEncerramento(sessaoRequest.getDataHoraAbertura()
+                .plusMinutes(sessaoRequest.getDuracao()));
+        return sessaoEntity;
     }
 }

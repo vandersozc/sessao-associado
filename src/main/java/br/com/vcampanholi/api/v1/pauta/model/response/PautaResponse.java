@@ -1,19 +1,9 @@
 package br.com.vcampanholi.api.v1.pauta.model.response;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@JsonPropertyOrder("id")
 public class PautaResponse {
 
     @ApiModelProperty(value = "Identificador da pauta.", example = "1")
@@ -26,10 +16,48 @@ public class PautaResponse {
     private LocalDate dataCadastro;
 
     @ApiModelProperty(value = "Quantidade total de votos favoráveis", example = "10")
-    @Builder.Default
     private Long totalVotosFavor = 0L;
 
     @ApiModelProperty(value = "Quantidade total de votos contrários", example = "2")
-    @Builder.Default
     private Long totalVotosContra = 0L;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAssunto() {
+        return assunto;
+    }
+
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
+    }
+
+    public LocalDate getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(LocalDate dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+    public Long getTotalVotosFavor() {
+        return totalVotosFavor;
+    }
+
+    public void setTotalVotosFavor(Long totalVotosFavor) {
+        this.totalVotosFavor = totalVotosFavor;
+    }
+
+    public Long getTotalVotosContra() {
+        return totalVotosContra;
+    }
+
+    public void setTotalVotosContra(Long totalVotosContra) {
+        this.totalVotosContra = totalVotosContra;
+    }
 }

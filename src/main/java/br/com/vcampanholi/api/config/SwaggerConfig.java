@@ -14,7 +14,6 @@ import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
 @EnableSwagger2
-@lombok.Generated
 public class SwaggerConfig {
 
     @Bean

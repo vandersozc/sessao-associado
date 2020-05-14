@@ -5,7 +5,6 @@ import br.com.vcampanholi.api.v1.pauta.model.response.PautaResponse;
 import br.com.vcampanholi.domain.pauta.service.PautaService;
 import br.com.vcampanholi.exception.GenericException;
 import io.swagger.annotations.*;
-import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +14,13 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("sessao-associado/v1/pauta")
 @Api("Serviço para operações na pauta.")
-@AllArgsConstructor
 public class PautaController {
 
     private PautaService pautaService;
+
+    public PautaController(PautaService pautaService) {
+        this.pautaService = pautaService;
+    }
 
     @PostMapping
     @ApiOperation(value = "Criar uma nova pauta.", response = PautaResponse.class)

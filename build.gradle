@@ -56,8 +56,6 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-amqp'
     implementation 'org.flywaydb:flyway-core'
     implementation 'com.h2database:h2:1.4.199'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
 
     implementation 'org.pitest:pitest-junit5-plugin:0.8'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {

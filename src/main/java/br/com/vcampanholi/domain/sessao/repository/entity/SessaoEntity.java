@@ -2,18 +2,10 @@ package br.com.vcampanholi.domain.sessao.repository.entity;
 
 import br.com.vcampanholi.domain.pauta.repository.entity.PautaEntity;
 import br.com.vcampanholi.domain.sessao.enumerations.SituacaoEnum;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class SessaoEntity {
     @Id
@@ -34,4 +26,44 @@ public class SessaoEntity {
     @Column(name = "SITUACAO")
     @Enumerated(EnumType.ORDINAL)
     private SituacaoEnum situacao;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public PautaEntity getPauta() {
+        return pauta;
+    }
+
+    public void setPauta(PautaEntity pauta) {
+        this.pauta = pauta;
+    }
+
+    public LocalDateTime getDataHoraAbertura() {
+        return dataHoraAbertura;
+    }
+
+    public void setDataHoraAbertura(LocalDateTime dataHoraAbertura) {
+        this.dataHoraAbertura = dataHoraAbertura;
+    }
+
+    public LocalDateTime getDataHoraEncerramento() {
+        return dataHoraEncerramento;
+    }
+
+    public void setDataHoraEncerramento(LocalDateTime dataHoraEncerramento) {
+        this.dataHoraEncerramento = dataHoraEncerramento;
+    }
+
+    public SituacaoEnum getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(SituacaoEnum situacao) {
+        this.situacao = situacao;
+    }
 }

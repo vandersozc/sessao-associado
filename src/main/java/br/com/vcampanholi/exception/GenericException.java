@@ -1,15 +1,31 @@
 package br.com.vcampanholi.exception;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.springframework.http.HttpStatus;
 
-@Data
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper = false)
 public class GenericException extends RuntimeException {
 
-    private final String message;
-    private final HttpStatus status;
+    private String message;
+    private HttpStatus status;
+
+    public GenericException(String message, HttpStatus status) {
+        this.message = message;
+        this.status = status;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public HttpStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(HttpStatus status) {
+        this.status = status;
+    }
 }

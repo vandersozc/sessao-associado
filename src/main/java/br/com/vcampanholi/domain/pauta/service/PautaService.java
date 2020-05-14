@@ -7,7 +7,6 @@ import br.com.vcampanholi.domain.pauta.repository.PautaRepository;
 import br.com.vcampanholi.domain.pauta.repository.entity.PautaEntity;
 import br.com.vcampanholi.domain.sessaovoto.repository.SessaoVotoRepository;
 import br.com.vcampanholi.exception.GenericException;
-import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +14,15 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class PautaService {
 
     private PautaRepository pautaRepository;
     private SessaoVotoRepository sessaoVotoRepository;
+
+    public PautaService(PautaRepository pautaRepository, SessaoVotoRepository sessaoVotoRepository) {
+        this.pautaRepository = pautaRepository;
+        this.sessaoVotoRepository = sessaoVotoRepository;
+    }
 
     public PautaResponse criarPauta(PautaRequest pauta) {
         var entity = PautaMapper.mapToEntity(pauta);
