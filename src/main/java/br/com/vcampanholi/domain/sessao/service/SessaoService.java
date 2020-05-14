@@ -8,17 +8,19 @@ import br.com.vcampanholi.domain.sessao.mapper.SessaoMapper;
 import br.com.vcampanholi.domain.sessao.repository.SessaoRepository;
 import br.com.vcampanholi.domain.sessao.repository.entity.SessaoEntity;
 import br.com.vcampanholi.exception.GenericException;
-import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
 public class SessaoService {
 
     private PautaService pautaService;
-
     private SessaoRepository sessaoRepository;
+
+    public SessaoService(PautaService pautaService, SessaoRepository sessaoRepository) {
+        this.pautaService = pautaService;
+        this.sessaoRepository = sessaoRepository;
+    }
 
     public SessaoResponse criarSessao(Long pautaId, SessaoRequest sessao) {
         var entity = SessaoMapper.mapToEntity(sessao);

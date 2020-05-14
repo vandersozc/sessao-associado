@@ -1,1 +1,1 @@
-package br.com.vcampanholi.integration.model;import lombok.Getter;@Getterpublic enum UserStatusEnum {    UNABLE_TO_VOTE,    ABLE_TO_VOTE,    INVALID}
+package br.com.vcampanholi.integration.model;public enum UserStatusEnum {    UNABLE_TO_VOTE,    ABLE_TO_VOTE,    INVALID}

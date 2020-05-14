@@ -25,7 +25,6 @@ http://localhost:9001/swagger-ui.html#/
 
 ## Execução do Projeto
 - O projeto utiliza Java 11 com Gradle para build e gerenciamento das dependências.
-- Foi utilizada a biblioteca do [Lombok](https://projectlombok.org/), dependedo da IDE a ser utilizada sera necessário plugin para visualização dos métodos getter, setter, equals, builder; 
 Execute o comando abaixo na pasta raiz do projeto para fazer download das dependências e gerar os artefatos necessários:
 O serviço será executado na porta 9001.
 ```
